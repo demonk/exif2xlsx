@@ -63,9 +63,9 @@ def get_location(exif):
             lon_s = float(lon[2])
             lat_decimal = lat_d + (lat_m / 60.0) + (lat_s / 3600.0)
             lon_decimal = lon_d + (lon_m / 60.0) + (lon_s / 3600.0)
-            if info[1] is u'S':  # south latitude
+            if info[1] == u'S':  # south latitude
                 lat_decimal = -lat_decimal
-            if info[3] is u'W':  # west longitude
+            if info[3] == u'W':  # west longitude
                 lon_decimal = -lon_decimal
             return lon_decimal, lat_decimal
     return -999, -999
@@ -85,9 +85,9 @@ def get_location_heic(exif):
         lon_s = float(longitude_info[2])
         lat_decimal = lat_d + (lat_m / 60.0) + (lat_s / 3600.0)
         lon_decimal = lon_d + (lon_m / 60.0) + (lon_s / 3600.0)
-        if latitude_ref is u'S':  # south latitude
+        if latitude_ref == u'S':  # south latitude
             lat_decimal = -lat_decimal
-        if longitude_ref is u'W':  # west longitude
+        if longitude_ref == u'W':  # west longitude
             lon_decimal = -lon_decimal
         return lon_decimal, lat_decimal
 
